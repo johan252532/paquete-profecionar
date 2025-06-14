@@ -1,0 +1,141 @@
+/* ===================================================
+   1. Variables y Configuración Global (Tema Terapéutico)
+   =================================================== */
+:root {
+    /* Paleta de Colores: Calma, confianza y profesionalismo. */
+    --color-fondo: #f4f9f4; /* Un blanco con un toque de verde muy sutil */
+    --color-texto-principal: #3d4a3d; /* Un gris oscuro y cálido */
+    --color-texto-secundario: #7a8f7a;
+    --color-acento-principal: #5a7d5a; /* Verde salvia, sereno */
+    --color-acento-secundario: #e8e1d5; /* Un beige cálido */
+    
+    /* Tipografía: Clásica y amigable. */
+    --fuente-titulos: 'Lora', serif;
+    --fuente-cuerpo: 'Nunito Sans', sans-serif;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===================================================
+   2. El Contenedor Principal
+   =================================================== */
+.main-container {
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.09);
+    animation: fadeIn 0.6s ease-out;
+    
+}
+
+/* ===================================================
+   3. Cabecera del Perfil
+   =================================================== */
+.profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--color-acento-secundario);
+    margin-top: -10px; /* Truco para que la foto "flote" sobre el contenedor */
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-family: var(--fuente-titulos);
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+.profile-title {
+    color: var(--color-texto-secundario);
+    font-size: 1.1rem;
+    margin-top: 5px;
+    margin-bottom: 35px;
+}
+
+/* ===================================================
+   4. Botones y Footer
+   =================================================== */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-button {
+    background-color: transparent;
+    color: var(--color-texto-principal);
+    border: 2px solid #e0e6e0; /* Un borde muy sutil */
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.25s ease-out;
+}
+
+.link-button .icon {
+    color: var(--color-acento-principal);
+    font-size: 1.2rem;
+}
+
+/* --- Interactividad Hover --- */
+@media (hover: hover) {
+    .link-button:hover {
+        background-color: var(--color-acento-principal);
+        color: white;
+        border-color: var(--color-acento-principal);
+    }
+    .link-button:hover .icon {
+        color: white;
+    }
+}
+
+/* Botón de acción principal destacado */
+.link-button.primary-action {
+    background-color: var(--color-acento-principal);
+    border-color: var(--color-acento-principal);
+    color: white;
+}
+.link-button.primary-action .icon {
+    color: white;
+}
+.link-button.primary-action:hover {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+}
+
+.main-footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
+}
